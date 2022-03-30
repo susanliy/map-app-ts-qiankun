@@ -7,18 +7,19 @@
 </template>
 <script setup lang="ts">
 import {useQianKunProps}  from '@/hooks/useQianKun'
-import { ref} from 'vue'
+import {useStore} from '@/store';
+import {computed} from 'vue'
+import store1 from '@/store'
+
+
 /***qiankun ***/
-const {onGlobalStateChange,setGlobalState} = useQianKunProps()
-    let mes = ref("")
-    
-      onGlobalStateChange((state: any) => {
-        console.log('state111',state)
-      //监听全局状态
-      mes = state
-      });
+const store= useStore()
+const mes = computed(()=>store1?.state?.qiankunModule?.activeMenu)
+
+const {setGlobalState} = useQianKunProps()
 
   const butClick =()=>{
+      store1.commit('qiankunModule/setActiveMenu',111)
     setGlobalState({ project_id: '项目99' })//改变全局状态
   }
 </script>

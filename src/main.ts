@@ -40,6 +40,7 @@ export async function mount(props: any) {
   //只有在值改变的时候会进行传值--存vuex
   props.onGlobalStateChange((state: any, prev: any) => {
     console.log('1111',state, prev);
+    store.commit('qiankunModule/setActiveMenu',state)
   });
   props.setGlobalState((state: any)=>{
     console.log('state',state)
