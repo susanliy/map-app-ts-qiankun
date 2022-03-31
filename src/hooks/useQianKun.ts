@@ -24,9 +24,10 @@ export function useQianKunProps(){
      * 映射
      */
     const setGlobalState=(args:any)=> {
+       
+        actions.setGlobalState=args;
         return;
  
-        actions.setGlobalState=args;
     }
 
 return{actions,onGlobalStateChange,setGlobalState,setActions}

@@ -19,7 +19,7 @@ const mes = computed(()=>store1?.state?.qiankunModule?.activeMenu)
 const {setGlobalState} = useQianKunProps()
 
   const butClick =()=>{
-      store1.commit('qiankunModule/setActiveMenu',111)
+      // store1.commit('qiankunModule/setActiveMenu',111)
     setGlobalState({ project_id: '项目99' })//改变全局状态
   }
 </script>
